@@ -4,7 +4,7 @@ M.Tech (AIML) · Machine Learning · Assignment 2
 
 ## 1. Problem Statement
 Higher-education institutions lose students to dropout, which hurts both the students and the
-institution. The goal is to predict, from information known at enrolment and after the first two
+institution. The goal is to predict, from information known at enrollment and after the first two
 semesters (demographics, socio-economic factors, academic performance), whether a student will
 **Dropout**, remain **Enrolled**, or **Graduate**. Early identification lets the institution offer
 targeted support. This is a **3-class classification** problem; five classical ML classifiers are
