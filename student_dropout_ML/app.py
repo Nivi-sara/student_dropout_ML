@@ -36,11 +36,22 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-MODEL_DIR = "model"
+# Locate the model folder relative to this file, so it works wherever the app is
+# launched from (local run, or a repo with app.py inside a sub-folder).
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+_candidates = [os.path.join(BASE_DIR, "model"),
+               os.path.join(os.path.dirname(BASE_DIR), "model"),
+               os.path.join(os.getcwd(), "model")]
+MODEL_DIR = next((p for p in _candidates
+                  if os.path.exists(os.path.join(p, "artifacts.joblib"))), _candidates[0])
 
 
 @st.cache_resource
 def load_artifacts():
+    if not os.path.exists(os.path.join(MODEL_DIR, "artifacts.joblib")):
+        st.error("Model files not found. Make sure the 'model' folder (with artifacts.joblib "
+                 "and the five .joblib model files) is uploaded next to app.py in the repository.")
+        st.stop()
     art = joblib.load(os.path.join(MODEL_DIR, "artifacts.joblib"))
     models = {n: joblib.load(os.path.join(MODEL_DIR, f)) for n, f in art["model_files"].items()}
     return art, models
