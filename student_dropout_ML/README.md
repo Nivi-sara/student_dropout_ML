@@ -25,21 +25,11 @@ trained on the same data, compared with six metrics, and served through a Stream
   `test_data.csv` is the 20 % hold-out set (with the `Target` column) used by the app.
 
 ## 3. GitHub Repository Link
-<PASTE YOUR GITHUB REPO LINK HERE>
+https://github.com/Nivi-sara/student_dropout_ML
 
-Live app: <PASTE YOUR STREAMLIT COMMUNITY CLOUD LINK HERE>
+Live app: https://nivetha-e-studentdropoutml-cgvct4jqdsrvuo8u7qexpt.streamlit.app/
 
-```
-├── app.py            # Streamlit app
-├── common.py         # shared metric code
-├── train.py          # training + evaluation script
-├── requirements.txt
-├── README.md
-├── test_data.csv     # hold-out test set
-├── data.csv          # original UCI data (optional to commit)
-├── model/            # 5 saved models + artifacts.joblib
-└── results/          # metrics.csv / metrics.md
-```
+
 
 Run locally: `pip install -r requirements.txt` → `python train.py data.csv` → `streamlit run app.py`
 
