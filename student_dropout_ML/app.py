@@ -113,7 +113,7 @@ def evaluate(name):
 tab_over, tab_eval, tab_cmp = st.tabs(
     ["Overview", "Evaluate model", "Compare models"])
 
-# ---- 1. Overview ------------------------------------------------------------
+# ---- 1. Student Data ------------------------------------------------------------
 with tab_over:
     st.subheader("Uploaded data at a glance")
     a, b, c = st.columns(3)
@@ -136,7 +136,7 @@ with tab_over:
         st.markdown("**First rows of the file**")
         st.dataframe(df.head(10), use_container_width=True, height=300)
 
-# ---- 2. Evaluate one model -------------------------------------------------------
+# ---- 2. Model Report -------------------------------------------------------
 with tab_eval:
     st.subheader(f"{model_name}")
     res = evaluate(model_name)
@@ -163,7 +163,7 @@ with tab_eval:
                                     output_dict=True, zero_division=0)
         st.dataframe(pd.DataFrame(rep).T.round(3), use_container_width=True)
 
-# ---- 3. Compare models -----------------------------------------------------------
+# ---- 3.Model Showdown -----------------------------------------------------------
 with tab_cmp:
     st.subheader("All classifiers on the uploaded data")
     comp = pd.DataFrame({n: evaluate(n) for n in models}).T.round(4)
