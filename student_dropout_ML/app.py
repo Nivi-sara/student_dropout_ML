@@ -1,7 +1,7 @@
 """Streamlit app: Student Dropout & Academic Success - Model evaluation dashboard.
 
 Loads the pre-trained models from model and evaluates them on an
-uploaded test CSV that contains the feature columns and target column.
+uploaded test CSV that contains the feature columns and the target column.
 """
 import os
 import joblib
