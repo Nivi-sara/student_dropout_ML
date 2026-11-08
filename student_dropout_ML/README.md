@@ -67,3 +67,16 @@ All metrics are computed on the 20% hold-out test set (`test_data.csv`). Because
 | F1 Score | Harmonic mean of Precision and Recall |
 | MCC | Matthews Correlation Coefficient: a balanced score that stays reliable when classes are imbalanced (1 is perfect, 0 is random) |
 
+
+
+- **GitHub Repository:** https://github.com/Nivi-sara/student_dropout_ML
+- **Live Streamlit App:** https://nivetha-e-studentdropoutml-cgvct4jqdsrvuo8u7qexpt.streamlit.app/
+- **Dataset:** https://archive.ics.uci.edu/dataset/697
+
+All project files are in the `student_dropout_ML` folder.
+
+## Running the Application Locally
+    python -m pip install -r student_dropout_ML/requirements.txt
+    python -m streamlit run student_dropout_ML/app.py
+
+Upload `test_data.csv` in the app to see the results.
