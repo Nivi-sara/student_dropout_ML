@@ -55,7 +55,7 @@ Precision, Recall and F1 are **weighted averages**; AUC is **one-vs-rest (weight
 | KNN | Accuracy 0.695, MCC 0.487. Overfits heavily: 100% train accuracy vs 69.5% test. Distances are less reliable across 36 features, including category codes. |
 | Naive Bayes | Weakest: Accuracy 0.659, AUC 0.812, MCC 0.428. Its feature-independence assumption fails because semester features are strongly correlated. It also underfits (train accuracy 0.675). |
 | Support Vector Machine | Close second: Accuracy 0.758, AUC 0.887, MCC 0.599. Mild overfitting (train 0.830 vs test 0.758). Slowest to train. |
-| **Overall winner** | **Logistic Regression.** It has the highest Accuracy, AUC, Precision, Recall, F1 and MCC, with no overfitting. All models find the Enrolled class hardest, because it is the smallest class (about 18% of students). |
+| **Overall best model** | **Logistic Regression.** It has the highest Accuracy, AUC, Precision, Recall, F1 and MCC, with no overfitting. All models find the Enrolled class hardest, because it is the smallest class (about 18% of students). |
 
 ## 5.Evaluation Metrics
 All metrics are computed on the 20% hold-out test set (`test_data.csv`). Because the target has three classes, Precision, Recall and F1 use the weighted average, and AUC uses one-vs-rest (weighted).
@@ -68,6 +68,4 @@ All metrics are computed on the 20% hold-out test set (`test_data.csv`). Because
 | Recall | Of the students who truly belong to a class, how many the model finds |
 | F1 Score | Harmonic mean of Precision and Recall |
 | MCC | Matthews Correlation Coefficient: a balanced score that stays reliable when classes are imbalanced (1 is perfect, 0 is random) |
-```
-python train.py data.csv
-```.
+
