@@ -32,8 +32,6 @@ Live app: https://nivetha-e-studentdropoutml-cgvct4jqdsrvuo8u7qexpt.streamlit.ap
 
 
 
-Run locally: `pip install -r requirements.txt` → `python train.py data.csv` → `streamlit run app.py`
-
 ## 4. Models Used
 Models: Logistic Regression, Decision Tree, K-Nearest Neighbors, Gaussian Naive Bayes, SVM (RBF).
 Precision, Recall and F1 are **weighted averages**; AUC is **one-vs-rest (weighted)**.
